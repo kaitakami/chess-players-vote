@@ -1,17 +1,26 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
     provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "sqlite"
-    url      = env("DATABASE_URL")
+    provider          = "postgresql"
+    url               = env("DATABASE_URL")
+    shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
-model Example {
-    id        String   @id @default(cuid())
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model ChessPlayer {
+    id           Int     @id
+    username     String
+    name         String?
+    avatar       String
+    votedFor     Vote[]  @relation("votedFor")
+    votedAgainst Vote[]  @relation("votedAgainst")
+}
+
+model Vote {
+    id             String      @id @default(uuid())
+    votedFor       ChessPlayer @relation(name: "votedFor", fields: [votedForId], references: [id])
+    votedAgainst   ChessPlayer @relation(name: "votedAgainst", fields: [votedAgainstId], references: [id])
+    votedForId     Int
+    votedAgainstId Int
 }
