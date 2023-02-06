@@ -20,5 +20,8 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  images: {
+    domains: ["images.chesscomfiles.com", "www.chess.com"]
+  }
 };
 export default config;
