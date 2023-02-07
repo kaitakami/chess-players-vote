@@ -1,28 +1,32 @@
-# Create T3 App
+# Vote for your favorite chess player
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## What is this?
 
-## What's next? How do I make an app with this?
+This is a simple application to vote for your favorite chess player. (live-blitz)
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+I used the chess.com api to fetch the data.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+### Tech stack (T3)
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- Tailwindcss
+- TRPC
+- Prisma
+- Nextjs
 
-## Learn More
+### Extra
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+- Headlessui for the animation
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+### Database
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+- Supabase
 
-## How do I deploy this?
+### Things to improve
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+- The results page fetch all the players info from the database every time it's visited. A better approach could be to use static rendering with Nextjs(getStaticProps).
+
+- The actual players table contains just 50 players (leaderboard top 50).
+
+- The animation just works when the next players haven't been fetched. This isn't necessarily bad but for some people can be annoying.
+
+## Preview
