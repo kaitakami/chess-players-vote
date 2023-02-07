@@ -23,7 +23,6 @@ const Home: NextPage = () => {
       votedForId,
       votedAgainstId
     })
-    console.log(votedForId)
 
     setPlayerIds(getRandomIdNums())
   }
