@@ -55,9 +55,14 @@ const Home: NextPage = () => {
           }
         </div>
       </main>
-      <footer className="absolute pb-2 bottom-0 w-full flex justify-center">
-        <Link href="/results" className="text-lg text-slate-300  hover:text-white transition-colors">Results ♟️</Link>
-      </footer>
+      <div className="relative">
+        <footer className="absolute pb-2 bottom-0 w-full flex justify-center text-lg text-slate-300  transition-colors gap-3">
+          <Link href="/results" className="hover:text-white">Results ♟️</Link>
+          <div>|</div>
+          <a href="https://github.com/kaitakami/chess-players-vote" target="_blank" rel="noreferrer" className="hover:text-white">My Github</a>
+        </footer>
+      </div>
+
     </>
   );
 };
